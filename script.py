@@ -2,7 +2,9 @@ import pdfplumber
 import pandas as pd
 import re
 
-# Store the pdf in a variable
+# The length variable of the current campaign ID for Twitter. 
+LEN_OF_CAMP_ID_FOR_TWIITER = 8
+# The document name variable.
 document = 'sample_invoice_from_twitter.pdf'
 
 # Open an invoice from Twitter Ads.
@@ -12,9 +14,7 @@ with pdfplumber.open(document) as pdf:
         pages = pdf.pages[i]                # a variable declaration 
         text.append(pages.extract_text())   # extract text, using the .extract_text() method,
                                             # from the page and add it to the text array.
-
 data = pd.DataFrame(text).values.tolist()   # create a pandas dataframe from the text array.
-
 
 # Get the text string from the first page of the data extracted from the pdf.
 text = data[0][0]
@@ -25,13 +25,15 @@ list_of_rows = text.split('\n')
 camp_id_list = []
 # Declare list to store amount.
 amount_list = []
-# The length of the campaign ID for Twitter.
-LEN_OF_CAMP_ID_FOR_TWIITER = 8
- 
-def create_df_with_camp_id_and_amount():
-    global df
-    df = df.iloc[0:0]
 
+def create_df_with_camp_id_and_amount():
+    
+    global df
+    
+    # Empty the df in case there something already in it ? not sure if it works like that.
+    df = pd.DataFrame()
+    df = df.iloc[0:0]
+    
     for row in list_of_rows:
         # If # and $ are in the same row, it is the row we want for the camp_id and amount extraction.
         if (('#' in row) & ('$' in row)):
@@ -46,9 +48,15 @@ def create_df_with_camp_id_and_amount():
             # Split and store the individual values from the list above. 
             camp_id = camp_id_and_amount_trimmed2[0]
             amount = camp_id_and_amount_trimmed2[1]
-            # Store camp_id and amount seperately.
+            # Store camp_id and amount seperately, type conversion to int & float.
             camp_id_list.append(int(camp_id))
             amount_list.append(float(amount))
 
     # Create a DataFrame object from the lists:[camp_id, amount] with columns: 'camp_id', 'amount' 
     df = pd.DataFrame({'camp_id': camp_id_list, 'amount': amount_list})
+    
+    
+    # FOR FUTURE
+    
+    # Add columns [invoice_number, invoice_date, invoice_client, project_id].
+    # Test it with a pdf with multiple pages where different invoices for different billing addresses are merged in one file.

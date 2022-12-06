@@ -13,5 +13,5 @@ Uses pdfplumber, pandas, re modules.
   g) Supplier sales tax registration number
   h) Invoice date
   i) Invoice number
-3) Create a DataFrame.
+3) Create a Pandas DataFrame.
 4) Merge with other databases.

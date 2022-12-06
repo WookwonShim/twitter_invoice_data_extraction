@@ -1,4 +1,4 @@
-This is a mini utility program that I'm writing for practice.
+This is a mini utility program that I'm writing for practice. It's not intended for actual use. 
 
 Uses pdfplumber, pandas, re modules.
 

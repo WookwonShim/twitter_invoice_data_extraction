@@ -2,6 +2,9 @@ import pdfplumber
 import pandas as pd
 import re
 
+# Store the pdf in a variable
+document = 'sample_invoice_from_twitter.pdf'
+
 # Open an invoice from Twitter Ads.
 with pdfplumber.open(document) as pdf:
     text = []                               # an array to store the text values.

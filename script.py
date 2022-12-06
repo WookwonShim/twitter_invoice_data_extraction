@@ -30,7 +30,7 @@ def create_df_with_camp_id_and_amount():
     
     global df
     
-    # Empty the df in case there something already in it ? not sure if it works like that.
+    # Empty the df in case there's something already in it ? not sure if it works like that.
     df = pd.DataFrame()
     df = df.iloc[0:0]
     

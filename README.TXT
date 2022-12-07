@@ -1,6 +1,6 @@
 This is a mini utility program that I'm writing for practice. It's not intended for actual use. 
 
-Includes the pdfplumber, pandas, re modules.
+Includes the pdfplumber, pandas modules.
 
 1) Feed a pdf file with multiple pages of Twitter invoices.
 2) Extract information.

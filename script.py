@@ -1,6 +1,5 @@
 import pdfplumber
 import pandas as pd
-import re
 
 # The length variable of the current campaign ID for Twitter. 
 LEN_OF_CAMP_ID_FOR_TWIITER = 8

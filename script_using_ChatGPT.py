@@ -6,6 +6,9 @@
 # FIRST QUESTION:
 # "Write me a Python code to parse a text data from a pdf."
 
+# FOURTH QUESTION (for update):
+# "How to merge a list of string into one string variable?"
+
 # --------------------------------------------------------------------------------------------------------
 # Import the required libraries
 import os
@@ -31,11 +34,10 @@ with open(pdf_file, 'rb') as f:
         page_text = page_obj.extractText()
         list_of_text.append(page_text)
 
-#print(pages_text)
+# Check the type
+type(pages_text[0]) # the index 0 element is a type of string
 
-type(pages_text[0])
-
-# Join the string elements into one string variable.
+# Join the string elements into one string variable. Related to Q4.
 pages_text = ' '.join(list_of_text)
 
 # --------------------------------------------------------------------------------------------------------
@@ -70,6 +72,6 @@ for match in matches:
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
 
 # Print the updated DataFrame
-df
+print(df)
 
 # --------------------------------------------------------------------------------------------------------

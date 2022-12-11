@@ -1,5 +1,5 @@
 # I interacted with ChatGPT to write the script. 
-# Qeustions are asked in segments to get what I need and, I modified it to produce a complete script.
+# Questions are asked in segments to get what I need and, I modified it to produce a complete script.
 
 # FIRST QUESTION:
 # "Write me a Python code to parse a text data from a pdf."

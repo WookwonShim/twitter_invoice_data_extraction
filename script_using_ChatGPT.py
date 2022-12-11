@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------------------------------
 
-# I interacted with ChatGPT to write the script. 
+# Interactions with ChatGPT to write the script. 
 # Questions are asked in segments to get what I need and, I modified it to produce a complete script.
 
 # FIRST QUESTION:

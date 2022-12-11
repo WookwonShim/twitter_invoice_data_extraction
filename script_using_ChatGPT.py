@@ -1,3 +1,5 @@
+# --------------------------------------------------------------------------------------------------------
+
 # I interacted with ChatGPT to write the script. 
 # Questions are asked in segments to get what I need and, I modified it to produce a complete script.
 
@@ -32,6 +34,7 @@ with open(pdf_file_path, 'rb') as f:
 # Check what the return type is.
 print(type(page_text))
 
+# --------------------------------------------------------------------------------------------------------
 
 # SECOND QUESTION:
 # "What is the regex to capture #33333333 and $33.00?"
@@ -58,9 +61,12 @@ df = pd.DataFrame(columns=["campaign_id", "amount"])
 
 # Loop through all matches
 for match in matches:
-    # Print the captured values 
+    # Store the captured values in the Pandas DataFrame.
+    # This is the part where I modified from the answer from the third question, combined with 2nd question.
     new_row = {"campaign_id": match.group(1), "amount": match.group(2)}
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
 
 # Print the updated DataFrame
 print(df)
+
+# --------------------------------------------------------------------------------------------------------

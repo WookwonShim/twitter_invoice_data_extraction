@@ -1,7 +1,7 @@
 # --------------------------------------------------------------------------------------------------------
 
 # Interactions with ChatGPT to write the script. 
-# Questions are asked in segments to get what I need and, I modified it to produce a complete script.
+# Questions are asked in parts to get what I need and, small modifications made to produce a complete script.
 
 # FIRST QUESTION:
 # "Write me a Python code to parse a text data from a pdf."
